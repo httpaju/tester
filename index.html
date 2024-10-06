@@ -11,21 +11,29 @@
 
     gtag('config', 'G-T9LVFKB3GD');
   </script>
+  <!-- Google Adsense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
     crossorigin="anonymous"></script>
+  
+  <!-- Meta tags for page info -->
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AJ APPLICATIONS</title>
   <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Open Graph Meta Tags for social media sharing -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="AJ">
   <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
   <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
   <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!">
-    <style>
-        body, html {
+
+ 
+
+  <!-- Inline styles -->
+  <style>
+       body, html {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -47,7 +55,7 @@
 
         /* Logo styling */
         .logo {
-            height: 150px; /* Adjust the height of the logo */
+            height: 200px; /* Adjust the height of the logo */
             margin-right: 15px; /* Adds spacing between logo and text */
         }
 
@@ -155,13 +163,14 @@
         footer a:hover {
             text-decoration: underline;
         }
-    </style>
+  </style>
 </head>
+
 <body>
 
     <header>
-        <img src="icon.png" alt="AJ APPLICATIONS Logo" class="logo"> <!-- Logo Image -->
-        
+        <img src="logo.png" alt="AJ APPLICATIONS Logo" class="logo"> <!-- Logo Image -->
+        <h1>AJ APPLICATIONS</h1>
     </header>
 
     <section class="hero">
@@ -180,21 +189,21 @@
         </div>
     </div>
 
-    <!-- Modal for selecting chat option -->
-    <div id="chat-modal" class="modal">
-        <div class="modal-content">
-            <h2>Select Your Chat Mode</h2>
-            <button id="video-chat">Video Chat</button>
-            <button id="text-chat">Text Chat</button>
-        </div>
-    </div>
-
     <!-- Modal for Terms and Conditions -->
     <div id="terms-modal" class="terms-modal">
         <div class="terms-content">
             <h2>Terms and Conditions</h2>
             <p>By continuing, you agree to our Terms and Conditions for chatting on this platform.</p>
             <button id="agree">I Agree</button>
+        </div>
+    </div>
+
+    <!-- Modal for selecting chat option -->
+    <div id="chat-modal" class="modal">
+        <div class="modal-content">
+            <h2>Select Your Chat Mode</h2>
+            <button id="video-chat">Video Chat</button>
+            <button id="text-chat">Text Chat</button>
         </div>
     </div>
 
@@ -207,6 +216,7 @@
         </p>
     </footer>
 
+    <!-- JavaScript section -->
     <script>
         // Get elements
         const startChatButton = document.getElementById('start-chat');
@@ -227,28 +237,27 @@
         // Age confirmation logic
         ageConfirmYesButton.addEventListener('click', function() {
             ageModal.style.display = 'none'; // Close age modal
-            chatModal.style.display = 'block'; // Show chat modal
+            termsModal.style.display = 'block'; // Show terms modal
         });
 
         ageConfirmNoButton.addEventListener('click', function() {
             window.location.href = 'https://www.youtube.com/live/8sWurm5nKsI?si=OG3efyV8GIAar_hp'; // Redirect to the link
         });
 
-        // Show terms modal when "Video Chat" or "Text Chat" is clicked
-        videoChatButton.addEventListener('click', function() {
-            chatModal.style.display = 'none'; // Close the chat modal
-            termsModal.style.display = 'block'; // Show terms modal
-        });
-
-        textChatButton.addEventListener('click', function() {
-            chatModal.style.display = 'none'; // Close the chat modal
-            termsModal.style.display = 'block'; // Show terms modal
-        });
-
-        // Close terms modal when "I Agree" is clicked
+        // Show chat modal after agreeing to terms
         agreeButton.addEventListener('click', function() {
-            termsModal.style.display = 'none';
-            alert('You can now start chatting!');
+            termsModal.style.display = 'none'; // Close terms modal
+            chatModal.style.display = 'block'; // Show chat modal
+        });
+
+        // Redirect to video chat page when clicking "Video Chat"
+        videoChatButton.addEventListener('click', function() {
+            window.location.href = 'video.html'; // Redirect to video.html
+        });
+
+        // Redirect to text chat page when clicking "Text Chat"
+        textChatButton.addEventListener('click', function() {
+            window.location.href = 'chat.html'; // Redirect to chat.html
         });
 
         // Close modal when clicking outside of it
@@ -266,4 +275,5 @@
     </script>
 
 </body>
+
 </html>
