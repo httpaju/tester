@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from lotta.lol/video by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Aug 2024 10:52:07 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+  crossorigin="anonymous"></script>
+  <title>AJ APPLICATIONS</title>
+  <link rel="icon" href="icon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/phone.css" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="180x180" href="icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icon.png">
+  <meta name="favicon/msapplication-TileColor" content="#da532c">
+  <meta name="favicon/theme-color" content="#333333">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Lotta">
+  <meta property="og:url" content="https://lotta.lol/">
+  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
+  <meta property="og:description" content="Lotta offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with Lottas!">
+
+</head>
+
+<body>
+  <div id="main">
+    <!-- top bar -->
+    <div id="top-bar">
+      <div id="logo">
+        <img src="icon.svg" width="200px" alt="Lotta" class="lott">
+      </div>
+      <div id="top-right">
+        <div id="peopleOnline">
+          <p style="color: black;" id="beta">Under Beta Stage</p>
+        </div>
+        <button id="report-btn" style="background-color: red; margin-right: 22px; color: white; border: none; padding-right: 12px; padding-left: 12px; font-size: 15px; font-weight: bold; border-radius: 15px;" class="button2">Report</button> 
+        <button id="feedback-btn" class="button">Feedbacks</button>
+      
+      </div>
+    </div>
+    <div id="reportModal" style="z-index: 999;" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Report</h2>
+        <p>Please select a reason for reporting:</p>
+        <select id="reportReason">
+          <option value="nudity">Nudity</option>
+          <option value="misbehavior">Misbehavior</option>
+          <option value="profanity">Profanity</option>
+          <option value="under18">Under 18</option>
+          <option value="other">Other</option>
+        </select>
+        <textarea id="otherReason" placeholder="Please specify your reason" class="bxx" style="display: none; height: 100px; "></textarea>
+        <button id="submitReportBtn" style="border-radius: 15px; font-size: 15px; padding: 6px;"  class="button">Submit</button>
+      </div>
+    </div>
+    <!-- video container -->
+    <div id="videos">
+      <div id="peer">
+        <video class="video-player mirror" id="video-peer" autoplay playsinline></video>
+        <div id="peer-video-loader"></div>
+      </div>
+      <div id="self">
+        <video class="video-player mirror" id="video-self" autoplay playsinline muted="muted"></video>
+      </div>
+    </div>
+
+ 
+    
+
+
+
+    <!-- message area -->
+    <div id="message-area">
+      <div id="messages"></div>
+      <div id="typing" style="display: none" class="message">Stranger is typing...</div>
+    </div>
+
+    <!-- input area -->
+    <div id="input-area">
+      <button class="button" id="skip-btn">Skip</button>
+      <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+      <button class="button" id="send-btn">Send<span>Enter</span></button>
+    </div>
+  </div>
+
+  <!-- feedback popup -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Provide Us Your Feedback</h2>
+      <form id="feedbackForm">
+        <textarea id="feedbackText" rows="10" placeholder="Help use Improve by providing your Feedbacks" required></textarea>
+        <input type="submit" class="button" id="submit-btn" value="Submit" />
+      </form>
+    </div>
+  </div>
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/video.js" type="module"></script>
+</body>
+
+
+<!-- Mirrored from lotta.lol/video by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 04 Aug 2024 10:52:08 GMT -->
+</html>
