@@ -15,7 +15,7 @@
     <div id="chat-box"></div>
     <input type="text" id="message-input" placeholder="Type a message..." />
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="/tester/socket.io/socket.io.js"></script>
     <script>
         const socket = io();
         const localVideo = document.getElementById('localVideo');
@@ -68,6 +68,39 @@
             chatBox.appendChild(messageElement);
             chatBox.scrollTop = chatBox.scrollHeight;
         }
+    </script>
+    <script>navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then(stream => {
+        // Access granted
+        localVideo.srcObject = stream;
+    })
+    .catch(error => {
+        console.error('Error accessing media devices:', error);
+    });
+navigator.mediaDevices.enumerateDevices()
+    .then(devices => {
+        devices.forEach(device => {
+            console.log(device.kind + ": " + device.label);
+        });
+    })
+    .catch(error => console.error('Error listing devices:', error));
+navigator.mediaDevices.getUserMedia({ video: true, audio: true })
+    .then(stream => {
+        const videoElement = document.createElement('video');
+        videoElement.srcObject = stream;
+        videoElement.autoplay = true;
+        document.body.appendChild(videoElement);
+    })
+    .catch(error => {
+        alert('Error accessing camera/microphone: ' + error.message);
+    });
+.catch(error => {
+    if (error.name === 'NotAllowedError') {
+        alert('Please allow camera and microphone access to use this feature.');
+    } else {
+        alert('An error occurred: ' + error.message);
+    }
+});
     </script>
 </body>
 </html>
