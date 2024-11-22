@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJApp - Talk to Strangers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet"> <!-- Futuristic Font -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Talk to Strangers</h1>
+        </header>
+
+        <!-- Video chat section -->
+        <div id="video-chat" class="video-container">
+            <video id="local-video" autoplay muted class="video"></video>
+            <video id="remote-video" autoplay class="video"></video>
+        </div>
+
+        <!-- Text chat section -->
+        <div id="chat" class="chat-container">
+            <ul id="messages" class="message-list"></ul>
+            <div class="chat-input-container">
+                <input id="input" autocomplete="off" placeholder="Say something..." class="chat-input"/>
+                <button id="send" class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
