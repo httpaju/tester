@@ -1,32 +1,29 @@
-// server.js
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
+const { Server } = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
-const io = socketIo(server);
+const io = new Server(server);
 
-// Serve static files from the "public" directory
+// Serve static files from 'public' directory
 app.use(express.static('public'));
 
-// Handle socket connections
 io.on('connection', (socket) => {
-    console.log('A user connected');
+    console.log('A user connected:', socket.id);
 
-    // Handle chat message
-    socket.on('chat message', (msg) => {
-        console.log('Message: ' + msg);
-        io.emit('chat message', msg); // Broadcast message to all clients
-    });
+    // Relay signaling data between peers
+    socket.on('offer', (data) => socket.broadcast.emit('offer', data));
+    socket.on('answer', (data) => socket.broadcast.emit('answer', data));
+    socket.on('candidate', (data) => socket.broadcast.emit('candidate', data));
 
-    // Handle disconnect
     socket.on('disconnect', () => {
-        console.log('A user disconnected');
+        console.log('User disconnected:', socket.id);
     });
 });
 
-// Start the server on port 3000
-server.listen(3000, () => {
-    console.log('Server running on http://localhost:3000');
+// Start the server
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
 });
