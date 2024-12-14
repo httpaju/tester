@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121" crossorigin="anonymous"></script>
+  <title>AJ APPLICATIONS - Video Chat & Messaging</title>
+  <link rel="icon" href="icon.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/phone.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="main">
+    <!-- Top Bar -->
+    <header id="top-bar">
+      <div class="container">
+        <div id="logo">
+          <h1>AJ <span>Applications</span></h1>
+        </div>
+        <div id="top-right">
+          <div id="peopleOnline">
+            <p id="beta">Beta</p>
+          </div>
+          <button id="report-btn" class="button">Report</button>
+          <button id="feedback-btn" class="button feedback-btn">Feedback</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Video Container -->
+    <section id="videos" class="container">
+      <div id="video-wrapper">
+        <div id="peer">
+          <video id="video-peer" autoplay playsinline></video>
+        </div>
+        <div id="self">
+          <video id="video-self" autoplay playsinline muted></video>
+        </div>
+      </div>
+    </section>
+
+    <!-- Message Area -->
+    <section id="message-area" class="container">
+      <div id="messages"></div>
+      <div id="typing" class="message">Stranger is typing...</div>
+    </section>
+
+    <!-- Input Area -->
+    <section id="input-area" class="container">
+      <button class="button" id="skip-btn">Skip</button>
+      <input type="text" id="message-input" placeholder="Type a message..." autocomplete="off" />
+      <button class="button" id="send-btn">Send</button>
+    </section>
+  </div>
+
+  <!-- Report Modal -->
+  <div id="reportModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Report</h2>
+      <p>Please select a reason for reporting:</p>
+      <select id="reportReason">
+        <option value="nudity">Nudity</option>
+        <option value="misbehavior">Misbehavior</option>
+        <option value="profanity">Profanity</option>
+        <option value="under18">Under 18</option>
+        <option value="other">Other</option>
+      </select>
+      <textarea id="otherReason" placeholder="Specify reason (optional)"></textarea>
+      <button id="submitReportBtn" class="button">Submit</button>
+    </div>
+  </div>
+
+  <!-- Feedback Modal -->
+  <div id="feedbackModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Feedback</h2>
+      <form id="feedbackForm">
+        <textarea id="feedbackText" placeholder="Provide your feedback" required></textarea>
+        <button type="submit" class="button submit-btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script defer src="js/main.js"></script>
+  <script defer src="js/video.js" type="module"></script>
+</body>
+
+</html>

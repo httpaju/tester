@@ -1,0 +1,404 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(vbgg.html);
+  background-size: cover;
+  overflow: hidden;
+}
+#video-btn{
+  margin-bottom: -10px;
+}
+.clk{
+  padding: 15px;
+  margin-top: 25px;
+  outline: black;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.clk:hover{
+  background-color:  #06faf6;
+ 
+ 
+}
+.lott{
+  width: 50px !important;
+}
+.log{
+  margin-top: -170px;
+  width: 80%;
+  
+  z-index: 0;
+  transition: all 1s;
+}
+.log:hover{
+  transform: scaleX(1.1);
+}
+#background-video {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  background-color: black; 
+  filter: saturate(0%);
+
+}
+#dark-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.242); /* Adjust opacity as needed */
+  z-index: -1; /* Ensure the overlay is below the video */
+}
+html {
+
+  background-repeat: no-repeat;
+  background-position: 0 calc(100vh - 400px);
+
+  animation: change 3s ease-in-out alternate-reverse infinite;
+}
+
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+
+#tos-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-family:Arial, Helvetica, sans-serif;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 500px;
+  max-width: 80%;
+  z-index: 10; /* Important: Set z-index to a high value (e.g., 10) */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+#tos-popup, #age-verification { /* Shared styles for both popups */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 500px;
+  max-width: 80%;
+  z-index: 10; /* Ensure popups are on top */
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+.tosden{
+  padding: 12px;
+  margin-top: 20px;
+  outline: black;
+  font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  border: none;
+  margin-right: 20px;
+  font-weight: bolder;
+  background-color: red;
+
+}
+.tosden:hover{
+ background-color: red;
+}
+
+
+
+
+#tos-popup.hidden, #age-verification.hidden { /* Style for hidden state */
+  opacity: 0;
+  pointer-events: none;
+}
+
+#tos-popup h2, #age-verification h2 {
+  margin-bottom: 10px;
+}
+
+#tos-popup p
+
+#tos-popup.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#tos-popup h2 {
+  margin-bottom: 10px;
+}
+
+#tos-popup p {
+  margin-bottom: 15px;
+}
+
+#tos-text {
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+#accept-tos {
+  background-color: #34badb;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  padding: 12px 25px !important;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out !important;
+}
+.ageden{
+  padding: 10px;
+  margin-top: 20px;
+  outline: black;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  border: none;
+  margin-right: 15px;
+  font-weight: bolder;
+  background-color: red;
+
+
+}
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+ 
+  -webkit-touch-callout: none;
+}
+#age-verification{
+  font-family:Arial, Helvetica, sans-serif;
+}
+.ageden:hover{
+  background-color: red;
+}
+.ageok{
+  padding: 10px;
+  margin-top: 20px;
+  outline: black;
+  font-size: 20px;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  border: none;
+
+  font-weight: bolder;
+  background-color: rgb(0, 158, 221);
+
+
+}
+.ageok:hover{
+  background-color: #2980b9;
+}
+#accept-tos:hover {
+  background-color: #2980b9;
+}
+
+footer {
+  background-color: #000000dc;
+  color: #fff;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding: 0.4em 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+footer nav ul li {
+  margin: 0 1em;
+}
+
+footer nav ul li a {
+  color: #ffffffd9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer nav ul li a:hover {
+  text-decoration: underline;
+}
+@media(max-width: 768px){
+  #pc{
+    display: none;
+  }
+  #nvv{
+    margin-right: -10px;
+  }
+  footer nav ul li {
+   
+    margin: 0 2em; /* Adjust the value as needed */
+  }
+}
+.update-banner {
+  font-family:'Courier New', Courier, monospace;
+  color: white; 
+  padding: 10px; 
+  font-weight: 500;
+  margin-top: -18px;
+  margin-bottom: -20px !important;
+  text-align: center; 
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+
+  #mobile{
+    display: none;
+  }
+  footer nav ul li {
+    margin: 0 12em; /* Adjust the value as needed */
+  }
+}
+/* Add other necessary styles below */
+.hidden {
+  display: none;
+}
+
+.online-count {
+ 
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.232);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+@media screen and (max-width: 600px) {
+  .log {
+    margin-top: -130px;
+  }
+  .lotte{
+    width: 60% !important; 
+  }
+  .tosden{
+    margin-bottom: 12px;
+    margin-right: 0px;
+  }
+  .ageden{
+    margin-right: 0px;
+  }
+}
+@keyframes change {
+  to {
+    background-position: -100px calc(100vh - 380px);
+  }
+
+  from {
+    background-position: 0 calc(100vh - 450px);
+  }
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 17px;
+  color: rgb(54, 5, 67);
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(255, 255, 255);
+  outline: 2px solid rgb(140, 140, 29);
+  min-width: 200px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: rgb(10, 193, 13);
+  color: white;
+  scale: 1.1;
+}

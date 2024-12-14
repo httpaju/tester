@@ -1,120 +1,157 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJ APPLICATIONS - Connect Beyond Boundaries</title>
-    <style>
-        body {
-            background-color: #0D1117;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 1.5em 5%;
-            background: rgba(13, 17, 23, 0.8);
-            position: fixed;
-            width: 90%;
-            z-index: 10;
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #00D1FF;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #ffffff;
-            margin: 0 1em;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #00D1FF;
-        }
-        .hero-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: linear-gradient(120deg, #11172B, #212946);
-            text-align: center;
-            padding: 0 2em;
-        }
-        .hero-section h1 {
-            font-size: 3em;
-            margin: 0;
-        }
-        .hero-section p {
-            font-size: 1.2em;
-            margin-top: 1em;
-        }
-        .cta-buttons {
-            margin-top: 2em;
-        }
-        .cta-button {
-            display: inline-block;
-            padding: 0.8em 2em;
-            margin: 0.5em;
-            color: #ffffff;
-            background-color: #00D1FF;
-            border: none;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #008CBF;
-        }
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: rgba(13, 17, 23, 0.9);
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        footer a {
-            color: #00D1FF;
-            text-decoration: none;
-            margin: 0 1em;
-        }
-    </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-T9LVFKB3GD');
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+    crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ APPLICATIONS</title>
+  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
+  <link rel="stylesheet" href="style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AJ">
+  <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
+  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
+  <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!"> 
+
+  <style>
+   
+
+    #dark-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
+  
+
+  <div id="dark-overlay"></div>
+
+  <video id="background-video" autoplay loop muted>
+    <source src="vid.mp4" type="video/mp4">
+  </video>
+  <div id="tos-popup" class="hidden">
+    <h2>Terms of Use & Privacy Policy</h2>
+    <p>Please read and agree to the <a href="tos.html">TOS</a> and <a href="pos.html">Privacy Policy</a> before starting.</p>
+    <textarea id="tos-text" readonly> Welcome! Before proceeding, please take the time to review our Terms of Service and Privacy Policy. These documents outline important information regarding your rights and responsibilities when using our site.
+
+By clicking "Accept" below, you acknowledge that you have read, understood, and agree to abide by the terms and conditions set forth in our Terms of Service and Privacy Policy.
+    </textarea><button class="tosden" onclick="denytos()">Deny</button> <button class="tosacp" id="accept-tos">Accept</button>
+  </div>
+  <div id="age-verification" class="hidden">
+    <h2>Age Verification</h2>
+    <p>You must be 18 years or older to use this service.</p>
+    <button class="ageden" onclick="ageres()">I am not 18</button>
+    <button class="ageok" id="confirm-age" onclick="confirmAge()">I am 18 or older</button>
+  </div>
+  <div id="dark-overlay"></div>
+  <div class="wrapper">
+    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+    <img src="icon.png" class="log" alt="logo">
+
+    <button id="video-btn" style="margin-bottom: -10px;" class="clk" onclick="redirect()">Video</button>
+    <button id="chat-btn" class="clk" onclick="redirect2()">Chat</button>
+  </div>
+
+  <footer id="pc">
     <nav>
-        <div class="logo">AJ APPLICATIONS</div>
-        <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Explore</a>
-            <a href="#">Features</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact</a>
-        </div>
+      <ul>
+        <li><a href="tos-2.html">Terms of Service</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <li><a href="pos-2.html">Privacy Policy</a></li>
+      </ul>
     </nav>
+  </footer>
+  <footer id="mobile">
+    <nav id="nvv">
+      <ul>
+        <li><a href="tos-2.html">Terms</a></li>
+        <li><a href="contact.html">Contact</a></li>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div>
-            <h1>Connect Beyond Boundaries</h1>
-            <p>Talk. Share. Explore. Safe and Anonymous Conversations.</p>
-            <div class="cta-buttons">
-                <a href="public/index.html" class="cta-button">Start a Conversation</a>
-                
-            </div>
-        </div>
-    </section>
+        <li><a href="pos-2.html">Policy</a></li>
+      </ul>
+    </nav>
+  </footer>
 
-    <!-- Footer -->
-    <footer>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Service</a>
-        <a href="#">Support</a>
-    </footer>
+  <script src="index-2.html" type="module"></script>
+  <script src="js/landing.js" type="module"></script>
+  <script>
+    function denytos() {
+      location.href = 'tosdeny.html';
+    }
+    function ageres() {
+      location.href = 'https://www.youtube.com/watch?v=020g-0hhCAU';
+    }
+    let con;
+    function redirect() {
+      con = 0;
+      const tosPopup = document.getElementById('tos-popup');
+      tosPopup.classList.remove('hidden'); // Show the TOS popup
+      document.getElementById("video-btn").disabled = true;
+      document.getElementById('accept-tos').addEventListener('click', () => {
+        tosPopup.classList.add('hidden'); // Hide the TOS popup
+        const ageVerification = document.getElementById('age-verification');
+        ageVerification.classList.remove('hidden'); // Show the age verification popup
+      });
+    }
+    function redirect2() {
+      con = 1;
+      const tosPopup = document.getElementById('tos-popup');
+      tosPopup.classList.remove('hidden'); // Show the TOS popup
+      document.getElementById("video-btn").disabled = true;
+      document.getElementById('accept-tos').addEventListener('click', () => {
+        tosPopup.classList.add('hidden'); // Hide the TOS popup
+        const ageVerification = document.getElementById('age-verification');
+        ageVerification.classList.remove('hidden'); // Show the age verification popup
+      });
+    }
+    function confirmAge() {
+      if (con == 0) {
+        location.href = 'video.html';
+      } else {
+        location.href = 'chat.html';
+      }
+      // Redirect to video page after age confirmation
+    }
+
+    // Onam Popup Functions
+    function showOnamPopup() {
+      document.getElementById('onam-popup').style.display = 'block';
+      document.getElementById('dark-overlay').style.display = 'block';
+    }
+
+    function closeOnamPopup() {
+      document.getElementById('onam-popup').style.display = 'none';
+      document.getElementById('dark-overlay').style.display = 'none';
+    }
+
+    // Show the Onam popup on page load
+    window.onload = function () {
+      showOnamPopup();
+    };
+  </script>
+
 </body>
+
 </html>
