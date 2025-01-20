@@ -10,15 +10,17 @@
 <body>
   <div class="container">
     <h1>QR Code Generator</h1>
-    <input type="text" id="text-input" placeholder="Enter text or URL">
-    <button id="generate-btn">Generate QR Code</button>
-    <canvas id="qrcode"></canvas>
+<input type="text" id="text-input" placeholder="Enter text or URL">
+<button id="generate-btn">Generate QR Code</button>
+<canvas id="qrcode"></canvas>
+<a id="download-btn" style="display: none;">Download QR Code</a>
 
-    <h1>QR Code Scanner</h1>
-    <div id="scanner">Waiting for Camera...</div>
-    <p id="result">Scanned Result: <span id="scanned-text"></span></p>
-    <small>Note: Ensure your camera is enabled for QR scanning.</small>
-  </div>
+<h1>QR Code Scanner</h1>
+<div id="scanner">Waiting for Camera...</div>
+<button id="rotate-btn">Switch Camera</button>
+<p id="result">Scanned Result: <span id="scanned-text"></span></p>
+<small>Note: Click "Switch Camera" to toggle between available cameras.</small>
+
 
   <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
