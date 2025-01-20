@@ -87,3 +87,20 @@ small {
   display: block;
   margin-top: 20px;
 }
+#download-btn {
+  display: none;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #4caf50, #1b5e20);
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+#download-btn:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(45deg, #388e3c, #1b5e20);
+}
+
