@@ -1,157 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T9LVFKB3GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-T9LVFKB3GD');
-  </script>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
-    crossorigin="anonymous"></script>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="icon.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AJ APPLICATIONS</title>
-  <meta name="description" content="A video chat platform where you can meet new people and have fun conversations." />
-  <link rel="stylesheet" href="style.css">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="AJ">
-  <meta property="og:url" content="https://httpaju.github.io/TALK-TO-STRANGER/">
-  <meta property="og:image" content="https://i.ibb.co/ZTSScSQ/icon.png">
-  <meta property="og:description" content="AJ offers an exciting video chat experience where you can meet new people and enjoy spontaneous conversations. Join in and discover the fun with AJ's!"> 
-
-  <style>
-   
-
-    #dark-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 999;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Generator & Scanner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  
+  <div class="container">
+    <h1>QR Code Generator</h1>
+    <input type="text" id="text-input" placeholder="Enter text or URL">
+    <button id="generate-btn">Generate QR Code</button>
+    <canvas id="qrcode"></canvas>
 
-  <div id="dark-overlay"></div>
-
-  <video id="background-video" autoplay loop muted>
-    <source src="vid.mp4" type="video/mp4">
-  </video>
-  <div id="tos-popup" class="hidden">
-    <h2>Terms of Use & Privacy Policy</h2>
-    <p>Please read and agree to the <a href="tos.html">TOS</a> and <a href="pos.html">Privacy Policy</a> before starting.</p>
-    <textarea id="tos-text" readonly> Welcome! Before proceeding, please take the time to review our Terms of Service and Privacy Policy. These documents outline important information regarding your rights and responsibilities when using our site.
-
-By clicking "Accept" below, you acknowledge that you have read, understood, and agree to abide by the terms and conditions set forth in our Terms of Service and Privacy Policy.
-    </textarea><button class="tosden" onclick="denytos()">Deny</button> <button class="tosacp" id="accept-tos">Accept</button>
-  </div>
-  <div id="age-verification" class="hidden">
-    <h2>Age Verification</h2>
-    <p>You must be 18 years or older to use this service.</p>
-    <button class="ageden" onclick="ageres()">I am not 18</button>
-    <button class="ageok" id="confirm-age" onclick="confirmAge()">I am 18 or older</button>
-  </div>
-  <div id="dark-overlay"></div>
-  <div class="wrapper">
-    <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
-
-    <img src="icon.png" class="log" alt="logo">
-
-    <button id="video-btn" style="margin-bottom: -10px;" class="clk" onclick="redirect()">Video</button>
-    <button id="chat-btn" class="clk" onclick="redirect2()">Chat</button>
+    <h1>QR Code Scanner</h1>
+    <div id="scanner">Waiting for Camera...</div>
+    <p id="result">Scanned Result: <span id="scanned-text"></span></p>
+    <small>Note: Ensure your camera is enabled for QR scanning.</small>
   </div>
 
-  <footer id="pc">
-    <nav>
-      <ul>
-        <li><a href="tos-2.html">Terms of Service</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-        <li><a href="pos-2.html">Privacy Policy</a></li>
-      </ul>
-    </nav>
-  </footer>
-  <footer id="mobile">
-    <nav id="nvv">
-      <ul>
-        <li><a href="tos-2.html">Terms</a></li>
-        <li><a href="contact.html">Contact</a></li>
-
-        <li><a href="pos-2.html">Policy</a></li>
-      </ul>
-    </nav>
-  </footer>
-
-  <script src="index-2.html" type="module"></script>
-  <script src="js/landing.js" type="module"></script>
-  <script>
-    function denytos() {
-      location.href = 'tosdeny.html';
-    }
-    function ageres() {
-      location.href = 'https://www.youtube.com/watch?v=020g-0hhCAU';
-    }
-    let con;
-    function redirect() {
-      con = 0;
-      const tosPopup = document.getElementById('tos-popup');
-      tosPopup.classList.remove('hidden'); // Show the TOS popup
-      document.getElementById("video-btn").disabled = true;
-      document.getElementById('accept-tos').addEventListener('click', () => {
-        tosPopup.classList.add('hidden'); // Hide the TOS popup
-        const ageVerification = document.getElementById('age-verification');
-        ageVerification.classList.remove('hidden'); // Show the age verification popup
-      });
-    }
-    function redirect2() {
-      con = 1;
-      const tosPopup = document.getElementById('tos-popup');
-      tosPopup.classList.remove('hidden'); // Show the TOS popup
-      document.getElementById("video-btn").disabled = true;
-      document.getElementById('accept-tos').addEventListener('click', () => {
-        tosPopup.classList.add('hidden'); // Hide the TOS popup
-        const ageVerification = document.getElementById('age-verification');
-        ageVerification.classList.remove('hidden'); // Show the age verification popup
-      });
-    }
-    function confirmAge() {
-      if (con == 0) {
-        location.href = 'video.html';
-      } else {
-        location.href = 'chat.html';
-      }
-      // Redirect to video page after age confirmation
-    }
-
-    // Onam Popup Functions
-    function showOnamPopup() {
-      document.getElementById('onam-popup').style.display = 'block';
-      document.getElementById('dark-overlay').style.display = 'block';
-    }
-
-    function closeOnamPopup() {
-      document.getElementById('onam-popup').style.display = 'none';
-      document.getElementById('dark-overlay').style.display = 'none';
-    }
-
-    // Show the Onam popup on page load
-    window.onload = function () {
-      showOnamPopup();
-    };
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
