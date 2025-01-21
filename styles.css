@@ -1,124 +1,150 @@
 
-/* Global Styles */
+/* Reset and Fonts */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1e1e2f, #27293d);
+  color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  margin: 0;
 }
 
-/* App Container */
-.app-container {
+/* Container */
+.container {
   max-width: 400px;
   width: 100%;
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #2c2c3c;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
   overflow: hidden;
+  text-align: center;
 }
 
 /* Header */
-.app-header {
-  background-color: #6200ea;
-  color: white;
-  padding: 20px;
+.header {
+  background: linear-gradient(135deg, #6200ea, #3700b3);
   text-align: center;
-}
-
-.app-header h1 {
-  font-size: 1.5rem;
-}
-
-/* Main Content */
-.app-main {
   padding: 20px;
 }
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+}
 
-/* Card Style */
+/* Main */
+.main {
+  padding: 20px;
+}
 .card {
-  background: #f9f9f9;
+  background: #3b3b4f;
   border-radius: 12px;
   padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 .card h2 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+.card p {
+  font-size: 1rem;
+  color: #cccccc;
+  margin-bottom: 20px;
 }
 
-/* Inputs and Buttons */
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-}
-
-button {
+/* Buttons */
+.btn-primary, .btn-secondary {
+  display: block;
   width: 100%;
   padding: 12px;
-  font-size: 16px;
-  color: white;
-  background-color: #6200ea;
   border: none;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.3s ease;
   margin-top: 10px;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #4500b3;
-}
-
-#download-btn {
-  display: none;
-  text-decoration: none;
-  background-color: #0288d1;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
   text-align: center;
-  display: block;
-  margin-top: 10px;
+  text-decoration: none;
 }
 
-/* Scanner */
-#scanner {
+/* Primary Button */
+.btn-primary {
+  background-color: #6200ea;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #3700b3;
+}
+
+/* Secondary Button */
+.btn-secondary {
+  background-color: #03dac5;
+  color: #000000;
+}
+.btn-secondary:hover {
+  background-color: #02a398;
+  color: #ffffff;
+}
+
+/* Input Field */
+.input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  background-color: #2c2c3c;
+  color: #ffffff;
+  outline: none;
+  border: 2px solid #6200ea;
+  transition: border-color 0.3s ease;
+}
+.input:focus {
+  border-color: #03dac5;
+}
+
+/* Scanner Box */
+.scanner-box {
   width: 100%;
   height: 250px;
-  border: 2px dashed #ccc;
-  border-radius: 12px;
+  border: 2px dashed #ffffff;
+  border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f1f1f1;
-}
-
-#result {
-  margin-top: 10px;
-  color: #6200ea;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #cccccc;
 }
 
 /* Footer */
-.app-footer {
-  background-color: #f1f1f1;
+.footer {
+  background-color: #1e1e2f;
   text-align: center;
   padding: 10px;
   font-size: 14px;
-  color: #666;
+  color: #cccccc;
+}
+
+/* Links */
+.link {
+  display: block;
+  text-align: center;
+  color: #03dac5;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 15px;
+}
+.link:hover {
+  text-decoration: underline;
 }

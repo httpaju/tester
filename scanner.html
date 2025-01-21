@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QR Code Scanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>QR Code Scanner</h1>
+    </header>
+
+    <main class="main">
+      <div class="card">
+        <h2>Scan a QR Code</h2>
+        <div id="scanner" class="scanner-box">Initializing Camera...</div>
+        <button id="rotate-btn" class="btn-primary">Switch Camera</button>
+        <p id="result">
+          <strong>Result:</strong> <span id="scanned-text">None</span>
+        </p>
+      </div>
+      <a href="generator.html" class="link">Switch to QR Code Generator</a>
+    </main>
+
+    <footer class="footer">
+      <p>QR Code App © 2025</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
+  <script src="scanner.js"></script>
+</body>
+</html>
