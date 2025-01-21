@@ -1,3 +1,4 @@
+
 // QR Code Generator
 document.getElementById("generate-btn").addEventListener("click", () => {
   const text = document.getElementById("text-input").value;

@@ -1,26 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QR Code Generator & Scanner</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>QR Code App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>QR Code Generator</h1>
-<input type="text" id="text-input" placeholder="Enter text or URL">
-<button id="generate-btn">Generate QR Code</button>
-<canvas id="qrcode"></canvas>
-<a id="download-btn" style="display: none;">Download QR Code</a>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <h1>QR Code App</h1>
+    </header>
 
-<h1>QR Code Scanner</h1>
-<div id="scanner">Waiting for Camera...</div>
-<button id="rotate-btn">Switch Camera</button>
-<p id="result">Scanned Result: <span id="scanned-text"></span></p>
-<small>Note: Click "Switch Camera" to toggle between available cameras.</small>
+    <!-- Content -->
+    <main class="app-main">
+      <!-- QR Code Generator -->
+      <section class="card">
+        <h2>Generate QR Code</h2>
+        <input type="text" id="text-input" placeholder="Enter text or URL">
+        <button id="generate-btn">Generate</button>
+        <canvas id="qrcode"></canvas>
+        <a id="download-btn" style="display: none;">Download QR Code</a>
+      </section>
 
+      <!-- QR Code Scanner -->
+      <section class="card">
+        <h2>Scan QR Code</h2>
+        <div id="scanner">Waiting for Camera...</div>
+        <button id="rotate-btn">Switch Camera</button>
+        <p id="result">Scanned Result: <span id="scanned-text"></span></p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>QR Code App © 2025</p>
+    </footer>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/html5-qrcode/minified/html5-qrcode.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
