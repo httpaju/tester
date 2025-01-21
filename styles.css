@@ -148,3 +148,16 @@ body {
 .link:hover {
   text-decoration: underline;
 }
+/* Adjust the position of the Switch Camera button */
+.btn-top {
+  position: relative;
+  margin-bottom: 15px;
+}
+.main .btn-top {
+  margin-top: 0;
+  width: calc(100% - 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  top: -20px;
+}
+
