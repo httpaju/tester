@@ -52,7 +52,7 @@
             background-color: #dc3545;
             color: white;
             position: absolute;
-            transition: top 0.3s, left 0.3s;
+            transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -61,18 +61,20 @@
         <h1>Will you be my Valentine? ❤️</h1>
         <div class="buttons">
             <a href="yes.html" class="btn yes">Yes</a>
-            <button class="btn no" onmouseover="moveButton()">No</button>
+            <button id="noButton" class="btn no">No</button>
         </div>
     </div>
 
     <script>
-        function moveButton() {
-            let button = document.querySelector(".no");
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 50);
-            button.style.left = x + "px";
-            button.style.top = y + "px";
-        }
+        document.addEventListener("DOMContentLoaded", function () {
+            let button = document.getElementById("noButton");
+            button.addEventListener("mouseover", function () {
+                let x = Math.random() * (window.innerWidth - 100);
+                let y = Math.random() * (window.innerHeight - 50);
+                button.style.left = x + "px";
+                button.style.top = y + "px";
+            });
+        });
     </script>
 </body>
 </html>
