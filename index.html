@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine? ❤️</title>
     <style>
-        /* 3D Background Animation */
+        /* Background Animation */
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -24,7 +24,7 @@
             animation: gradientBG 10s infinite ease-in-out;
         }
 
-        /* Floating 3D Card */
+        /* Floating Card */
         .container {
             text-align: center;
             background: white;
@@ -56,7 +56,7 @@
             position: relative;
         }
 
-        /* 3D Button Effects */
+        /* Button Styles */
         .btn {
             font-size: 18px;
             padding: 15px 30px;
@@ -73,7 +73,6 @@
             background-color: #28a745;
             color: white;
             box-shadow: 0 5px 10px rgba(0, 255, 0, 0.3);
-            position: relative;
         }
 
         .yes:hover {
@@ -84,8 +83,10 @@
         .no {
             background-color: #dc3545;
             color: white;
-            position: relative;
-            transition: top 0.3s ease-in-out, left 0.3s ease-in-out, transform 0.2s ease-in-out;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: transform 0.2s ease-in-out, top 0.3s ease-in-out, left 0.3s ease-in-out;
             box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
         }
 
@@ -106,11 +107,16 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             let button = document.getElementById("noButton");
-            button.addEventListener("mouseover", function () {
-                let x = Math.random() * (window.innerWidth - 100);
-                let y = Math.random() * (window.innerHeight - 50);
-                button.style.left = x + "px";
-                button.style.top = y + "px";
+            button.addEventListener("mouseenter", function () {
+                let maxX = window.innerWidth - button.clientWidth - 20;
+                let maxY = window.innerHeight - button.clientHeight - 20;
+                
+                let randomX = Math.random() * maxX;
+                let randomY = Math.random() * maxY;
+
+                button.style.position = "absolute";
+                button.style.left = randomX + "px";
+                button.style.top = randomY + "px";
             });
         });
     </script>
