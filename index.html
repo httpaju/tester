@@ -5,54 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Be My Valentine? ❤️</title>
     <style>
+        /* 3D Background Animation */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(to right, #ff758c, #ff7eb3);
             font-family: Arial, sans-serif;
             margin: 0;
+            background: linear-gradient(-45deg, #ff758c, #ff7eb3, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s infinite ease-in-out;
         }
+
+        /* Floating 3D Card */
         .container {
             text-align: center;
             background: white;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transform: perspective(1000px) rotateX(5deg);
+            animation: floating 3s infinite ease-in-out;
         }
+
+        @keyframes floating {
+            0% { transform: translateY(0px) rotateX(5deg); }
+            50% { transform: translateY(-10px) rotateX(8deg); }
+            100% { transform: translateY(0px) rotateX(5deg); }
+        }
+
         h1 {
             color: #ff4d4d;
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: bold;
         }
+
         .buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
             position: relative;
+            margin-top: 20px;
         }
+
+        /* 3D Button Effects */
         .btn {
             font-size: 18px;
-            padding: 12px 25px;
+            padding: 15px 30px;
             border: none;
             cursor: pointer;
             border-radius: 8px;
             text-decoration: none;
-            transition: 0.3s ease-in-out;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
+
         .yes {
             background-color: #28a745;
             color: white;
+            box-shadow: 0 5px 10px rgba(0, 255, 0, 0.3);
         }
+
         .yes:hover {
-            background-color: #218838;
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 255, 0, 0.5);
         }
+
         .no {
             background-color: #dc3545;
             color: white;
             position: absolute;
-            transition: top 0.3s ease-in-out, left 0.3s ease-in-out;
+            transition: top 0.3s ease-in-out, left 0.3s ease-in-out, transform 0.2s ease-in-out;
+            box-shadow: 0 5px 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .no:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
