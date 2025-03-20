@@ -1,18 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Will You Be My Valentine?</title>
-    <link rel="stylesheet" href="./public/css/style.css" />
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VZD8583NJ0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VZD8583NJ0');
+</script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5537134897652121"
+     crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPI Donation</title>
+  <meta name="description" content="Support us with a UPI donation." />
+  <link rel="icon" type="image/png" href="icon.png">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: black;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .payment-methods {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .payment-btn {
+      background: #ffcc00;
+      color: black;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      margin: 10px;
+      width: 80%;
+      max-width: 300px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .payment-btn:hover {
+      background: #ffdd44;
+    }
+    .payment-icon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
 </head>
 <body>
-    <h1 id="question-heading">Will you be my Valentine? ❤️</h1>
-    <div class="buttons">
-        <button id="yes-button">Yes</button>
-        <button id="no-button">No</button>
+  <div class="container">
+    <div class="title">Support Us with UPI Donation</div>
+    <p>Select your preferred payment method:</p>
+    <div class="payment-methods">
+      <button class="payment-btn" onclick="payWith('tez://upi/pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/gpay.png" alt="Google Pay" class="payment-icon"> Google Pay
+      </button>
+      <button class="payment-btn" onclick="payWith('phonepe://upi/pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/phonepay.png" alt="PhonePe" class="payment-icon"> PhonePe
+      </button>
+      <button class="payment-btn" onclick="payWith('paytmmp://pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/paytm.png" alt="Paytm" class="payment-icon"> Paytm
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/bharatpe.png" alt="BharatPe" class="payment-icon"> BharatPe
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/amazonpay.png" alt="Amazon Pay" class="payment-icon"> Amazon Pay
+      </button>
+      <button class="payment-btn" onclick="payWith('upi://pay?pa=ahammed-ajmal@sbi&pn=AJ APPLICATIONS')">
+        <img src="/image/mobikwik.png" alt="MobiKwik" class="payment-icon"> MobiKwik
+      </button>
     </div>
-
-    <script src="./public/js/script.js"></script>
+    <p>Thank you for your support!</p>
+  </div>
+  <script>
+    function payWith(url) {
+      window.location.href = url;
+    }
+  </script>
 </body>
 </html>
